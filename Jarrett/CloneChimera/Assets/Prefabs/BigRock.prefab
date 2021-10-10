@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1332699862154053418}
   - component: {fileID: 8664937442314682891}
   - component: {fileID: 3238285061852169669}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BigRock
-  m_TagString: Untagged
+  m_TagString: asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,4 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b01be75b85fbbe42b058002b33ddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 5
+  sr: {fileID: 0}
+  size: 1
+  minSize: 0.5
+  maxSize: 1.5
+  lifeTime: 30

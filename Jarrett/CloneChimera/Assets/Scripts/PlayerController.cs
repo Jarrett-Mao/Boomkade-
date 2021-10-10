@@ -20,6 +20,24 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.tag == "asteroid"){
+            // if ((this.size / 2) >= this.minSize){
+            //     makeSplit();
+            //     makeSplit();
+            // }
+
+            // Destroy(this.gameObject);
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = 0.0f;
+
+            this.gameObject.SetActive(false);
+
+            FindObjectOfType<GameManager>().playerDied();
+        }
+    }
+    
+
     // Update is called once per frame
     void Update()
     {
@@ -45,9 +63,9 @@ public class PlayerController : MonoBehaviour
 
 
         if (Input.GetKey(KeyCode.A))
-            transform.Rotate(-transform.forward * rotSpeed * Time.deltaTime);
+            transform.Rotate(transform.forward * rotSpeed * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.D))
-            transform.Rotate(transform.forward * rotSpeed * Time.deltaTime);
+            transform.Rotate(-transform.forward * rotSpeed * Time.deltaTime);
     }
 }
