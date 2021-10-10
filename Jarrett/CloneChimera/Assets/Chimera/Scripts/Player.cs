@@ -27,7 +27,6 @@ public class Player : Follower
     void Update()
     {
         if (Destroyed) return;
-        Debug.Log(grid.walls.Count);
         if (Vector2.Distance(transform.position, targetPosition) <= 0)
         {
             UpdateDirection(input);
@@ -77,7 +76,7 @@ public class Player : Follower
             Direction = GetDirection();
             if (IsValidPosition(Direction))
             {
-                Debug.Log("True" + gridPosition + Direction);
+                //Debug.Log("True" + gridPosition + Direction);
                 direction = UpdateTargetPostion(Direction);
             }
             else if (direction.x != 0) // Moving left or right

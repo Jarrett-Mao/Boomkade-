@@ -41,10 +41,11 @@ public class Grid : MonoBehaviour
         wallLocations = new List<Vector2>();
         foreach (Wall w in FindObjectsOfType<Wall>())
         {
+            //Debug.Log(w.transform.position);
             walls.Add(GetGridPosition(w.transform.position), w);
             wallLocations.Add(w.transform.position);
         }
-
+        //Debug.Log(walls.Count);
     }
 
     public void RestartMap()
