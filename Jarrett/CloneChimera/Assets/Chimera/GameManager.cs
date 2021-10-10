@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
     {
         explosionSequence = true;
         Destroy(Instantiate(BuildUpVFX, player.transform.position, Quaternion.identity), 1f);
+        GetComponent<CameraShake>().shakeDuration = .2f;
         GetComponent<AudioSource>().PlayOneShot(BuildUpSFX, .9f);
         yield return new WaitForSeconds(1f);
         Destroy(Instantiate(ExplosionVFX, player.transform.position, Quaternion.identity), 5);
