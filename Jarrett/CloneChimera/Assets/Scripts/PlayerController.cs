@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     public float laserSpeed;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
             GameObject laserObj = Instantiate(laser, transform.TransformPoint(Vector3.forward * 2), transform.rotation);
             laserObj.GetComponent<Rigidbody2D>().velocity = transform.up * laserSpeed * Time.deltaTime;
             time = cooldown;
+
+            
         }
 
         if (Input.GetKey(KeyCode.W)){
