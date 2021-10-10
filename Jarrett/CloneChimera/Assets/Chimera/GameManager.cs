@@ -134,10 +134,10 @@ public class GameManager : MonoBehaviour
     public Vector2 GetPlayer1Input()
     {
         Vector2 input = Vector2.zero;
-        if (Input.GetKeyDown(KeyCode.W)) input.y = 1;
-        else if (Input.GetKeyDown(KeyCode.S)) input.y = -1;
-        else if (Input.GetKeyDown(KeyCode.D)) input.x = 1;
-        else if (Input.GetKeyDown(KeyCode.A)) input.x = -1;
+        if (Input.GetKeyDown(KeyCode.W)) input = new Vector2(0, 1);
+        if (Input.GetKeyDown(KeyCode.S)) input = new Vector2(0, -1);
+        if (Input.GetKeyDown(KeyCode.D)) input = new Vector2(1, 0);
+        if (Input.GetKeyDown(KeyCode.A)) input = new Vector2(-1, 0);
 
         return input;
     }
@@ -145,10 +145,10 @@ public class GameManager : MonoBehaviour
     public Vector2 GetPlayer2Input()
     {
         Vector2 input = Vector2.zero;
-        if (Input.GetKeyDown(KeyCode.UpArrow)) input.y = 1;
-        else if (Input.GetKeyDown(KeyCode.DownArrow)) input.y = -1;
-        else if (Input.GetKeyDown(KeyCode.RightArrow)) input.x = 1;
-        else if (Input.GetKeyDown(KeyCode.LeftArrow)) input.x = -1;
+        if (Input.GetKeyDown(KeyCode.UpArrow)) input = new Vector2(0, 1);
+        if (Input.GetKeyDown(KeyCode.DownArrow)) input = new Vector2(0, -1);
+        if (Input.GetKeyDown(KeyCode.RightArrow)) input = new Vector2(1, 0);
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) input = new Vector2(-1, 0);
 
         return input;
     }
