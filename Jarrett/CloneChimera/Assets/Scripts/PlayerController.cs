@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
             this.gameObject.SetActive(false);
 
-            FindObjectOfType<GameManager>().playerDied();
+            //FindObjectOfType<GameManager>().playerDied();
             Camera.main.transform.position = new Vector3(0, 0, -9.917426f);
         }
     }

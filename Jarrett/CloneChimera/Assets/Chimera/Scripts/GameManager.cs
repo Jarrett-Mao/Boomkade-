@@ -75,8 +75,8 @@ public class GameManager : MonoBehaviour
 
         if (!explosionSequence)
         {
-            // player1.UpdatePlayer(GetPlayer1Input());
-            // player2.UpdatePlayer(GetPlayer2Input());
+            player1.UpdatePlayer(GetPlayer1Input());
+            player2.UpdatePlayer(GetPlayer2Input());
         }
 
     }
@@ -161,35 +161,4 @@ public class GameManager : MonoBehaviour
         GetComponent<AudioSource>().PlayOneShot(explosionSFX);
     }
 
-
-
-
-
-
-    public PlayerController player;
-
-    public float respawnTime = 3.0f; 
-
-    public int lives = 3;
-
-    public void playerDied(){
-        this.lives--;
-
-        if(this.lives <= 0){
-            GameOver();
-        }
-        else {
-            Invoke(nameof(Respawn), this.respawnTime);
-
-        }
-    }
-
-    private void Respawn(){
-        this.player.transform.position = Vector3.zero + new Vector3(0, -5, 0);
-        this.player.gameObject.SetActive(true);
-    }
-
-    private void GameOver(){
-        
-    }
 }
