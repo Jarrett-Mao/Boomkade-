@@ -7,13 +7,16 @@ public class PlayerController : MonoBehaviour
     public float rotSpeed;
     public float moveSpeed;
     public GameObject laser;
+    public float laserSpeed;
     public float cooldown = 1f;
     private float time = 0f;
     private Rigidbody2D rb;
 
-    public float laserSpeed;
-    
+    public bool bomber = false;
+    public GameObject bombpf;
+    public float bombcd;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour
             this.gameObject.SetActive(false);
 
             FindObjectOfType<GameManager>().playerDied();
+            Camera.main.transform.position = new Vector3(0, 0, -9.917426f);
         }
     }
     
@@ -45,10 +49,16 @@ public class PlayerController : MonoBehaviour
             time -= Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.Space)){
-            GameObject laserObj = Instantiate(laser, transform.TransformPoint(Vector3.forward * 2), transform.rotation);
-            laserObj.GetComponent<Rigidbody2D>().velocity = transform.up * laserSpeed * Time.deltaTime;
-            time = cooldown;
 
+            if (bomber != false){
+                Instantiate(bombpf, transform.position, bombpf.transform.rotation);
+                time = bombcd;
+            }
+            else {
+                GameObject laserObj = Instantiate(laser, transform.TransformPoint(Vector3.forward * 2), transform.rotation);
+                laserObj.GetComponent<Rigidbody2D>().velocity = transform.up * laserSpeed * Time.deltaTime;
+                time = cooldown;
+            }
             
         }
 

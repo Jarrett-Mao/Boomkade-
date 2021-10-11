@@ -53,7 +53,7 @@ public class Cargo : Follower
     {
         if (other.GetComponent<Player>())
         {
-            GameManager.instance.HandleDestroyPlayer(other.GetComponent<Player>());
+            // GameManager.instance.HandleDestroyPlayer(other.GetComponent<Player>());
         }
     }
 }

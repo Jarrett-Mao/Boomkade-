@@ -75,8 +75,8 @@ public class GameManager : MonoBehaviour
 
         if (!explosionSequence)
         {
-            player1.UpdatePlayer(GetPlayer1Input());
-            player2.UpdatePlayer(GetPlayer2Input());
+            // player1.UpdatePlayer(GetPlayer1Input());
+            // player2.UpdatePlayer(GetPlayer2Input());
         }
 
     }
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Respawn(){
-        this.player.transform.position = Vector3.zero;
+        this.player.transform.position = Vector3.zero + new Vector3(0, -5, 0);
         this.player.gameObject.SetActive(true);
     }
 

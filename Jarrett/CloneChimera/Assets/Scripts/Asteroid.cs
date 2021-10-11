@@ -14,7 +14,7 @@ public class Asteroid : MonoBehaviour
     public float minSize = 0.5f;
     public float maxSize = 1.5f;
 
-    public float lifeTime = 20.0f;
+    public float lifeTime = 10.0f;
 
     private void Awake(){
         sr = GetComponent<SpriteRenderer>();
@@ -53,7 +53,7 @@ public class Asteroid : MonoBehaviour
         }
     }
 
-    private void makeSplit(){
+    public void makeSplit(){
         Vector2 position = this.transform.position;
         position += Random.insideUnitCircle * 0.5f;
 
