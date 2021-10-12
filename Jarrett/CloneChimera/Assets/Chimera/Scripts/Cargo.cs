@@ -33,7 +33,7 @@ public class Cargo : Follower
 
         Invoke("TurnOnCollider", Time.deltaTime * 2);
     }
-    
+
 
     public void TurnOnCollider()
     {
@@ -53,7 +53,7 @@ public class Cargo : Follower
     {
         if (other.GetComponent<Player>())
         {
-            // GameManager.instance.HandleDestroyPlayer(other.GetComponent<Player>());
+            GameManager.instance.HandleDestroyPlayer(other.GetComponent<Player>());
         }
     }
 }
