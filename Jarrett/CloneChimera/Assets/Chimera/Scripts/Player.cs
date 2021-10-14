@@ -180,7 +180,7 @@ public class Player : Follower
     {
         if (other.GetComponent<Player>())
         {
-            GameManager.instance.HandleDestroyPlayer(other.GetComponent<Player>());
+           // GameManager.instance.HandleDestroyPlayer(other.GetComponent<Player>());
         }
     }
 }
