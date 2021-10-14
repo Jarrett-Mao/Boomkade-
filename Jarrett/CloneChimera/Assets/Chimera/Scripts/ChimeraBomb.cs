@@ -20,7 +20,7 @@ public class ChimeraBomb : MonoBehaviour
     void Update(){
         fuse -= Time.deltaTime;
         if(fuse > 0.05f && fuse < blinkTimer){
-            Debug.Log("Bomb is blinking!");
+            //Debug.Log("Bomb is blinking!");
             /* 
             // Code intends to turn the bomb to its negative color. Broken.
             Color.RGBToHSV(sprite.color, out float H, out float S, out float V);
