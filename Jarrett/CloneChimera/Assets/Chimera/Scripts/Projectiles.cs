@@ -59,7 +59,7 @@ public class Projectiles : Cargo
     void Update()
     {
        
-        if (Input.GetKeyUp(KeyCode.LeftShift)){
+        if (Input.GetKeyUp(KeyCode.Space)){
             
             //bullet.GetComponent<ConstantForce2D>().force = new Vector2(0f, 0f);
             // check if cargo available to shoot
