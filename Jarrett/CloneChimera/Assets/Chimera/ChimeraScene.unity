@@ -2677,9 +2677,7 @@ MonoBehaviour:
   target: {fileID: 0}
   player: {fileID: 141454464238744379}
   direct: {x: 0, y: 0}
-  bullet: {fileID: 8122115529710740363, guid: d27c0ca0ee5d8174ab3152316bac4053, type: 3}
-  tempCargo: {fileID: 0}
-  keyCount: 0
+  bullet: {fileID: 8997464282634417183, guid: 7675366ff043d8143949908ad1b801bb, type: 3}
 --- !u!1001 &738682070
 PrefabInstance:
   m_ObjectHideFlags: 0
