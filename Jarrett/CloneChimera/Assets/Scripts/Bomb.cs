@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     public GameObject explodepf;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator explode(){
