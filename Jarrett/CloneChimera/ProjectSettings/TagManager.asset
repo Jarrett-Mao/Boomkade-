@@ -7,6 +7,8 @@ TagManager:
   - laser
   - asteroid
   - warpzone
+  - Wall
+  - PlayerShip
   layers:
   - Default
   - TransparentFX
