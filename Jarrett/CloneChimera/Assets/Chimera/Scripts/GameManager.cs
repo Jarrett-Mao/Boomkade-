@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public List<Player> players;
 
     public GameObject musicPlayer;
+    public AudioSource bgm;
 
 
     private void Awake()
@@ -73,6 +74,9 @@ public class GameManager : MonoBehaviour
 
             player1.SetPosition(new Vector3(-11.5f, .5f, 0), 270);
             player2.SetPosition(new Vector3(11.5f, -.5f, 0), 90);
+        
+            StartCoroutine(FadeAudioSouce.StartFade(bgm, 1.0f, 1.0f));
+            StartCoroutine(FadeAudioSouce.SetVolume(bgm, 1.0f));
         }
 
         if (!explosionSequence)
@@ -89,8 +93,12 @@ public class GameManager : MonoBehaviour
         if (player.Destroyed) return;
         player.Destroyed = true;
         StartCoroutine(DestroySpaceshipSequence(player));
-        Debug.Log("working");
-        musicPlayer.GetComponent<BackgroundMusic>().playGameOver();
+        // Debug.Log("working");
+        // musicPlayer.GetComponent<BackgroundMusic>().playGameOver();
+        
+        StartCoroutine(FadeAudioSouce.StartFade(bgm, 3.0f, 0.1f));
+        StartCoroutine(FadeAudioSouce.SetVolume(bgm, 0.1f));
+        
     }
 
     public IEnumerator DestroySpaceshipSequence(Player player)

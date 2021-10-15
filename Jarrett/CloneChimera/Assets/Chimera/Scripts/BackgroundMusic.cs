@@ -31,7 +31,7 @@ public class BackgroundMusic : MonoBehaviour
     public void playGameOver(){
         if (levelMusic.isPlaying){
             bgm = false;
-            levelMusic.Stop();
+            levelMusic.Pause();
         }
         if (!deathSong.isPlaying && gom == false){
             deathSong.Play();

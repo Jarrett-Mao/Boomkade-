@@ -4267,6 +4267,7 @@ MonoBehaviour:
   player2: {fileID: 1719424462}
   players: []
   musicPlayer: {fileID: 1139614949}
+  bgm: {fileID: 2008595732}
 --- !u!82 &1140398416
 AudioSource:
   m_ObjectHideFlags: 0
