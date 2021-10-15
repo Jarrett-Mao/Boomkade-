@@ -11,14 +11,22 @@ public class ChimeraBomb : MonoBehaviour
     double blinkTimer = 2.7f;
     Color spriteColor;
     Color red = new Color (1, 0, 0, 1);
+    private float hitTimeout = .4f;
 
     void Start(){
         sprite = GetComponent<SpriteRenderer>();
         StartCoroutine(explode());
         spriteColor = sprite.color;
+        Invoke("TurnOnCollider", .4f);
+    }
+
+    public void TurnOnCollider()
+    {
+        GetComponent<Collider2D>().isTrigger = false;
     }
 
     void Update(){
+        hitTimeout -= Time.deltaTime;
         fuse -= Time.deltaTime;
         if(fuse > 0.05f && fuse < blinkTimer){
             //Debug.Log("Bomb is blinking!");
@@ -35,8 +43,29 @@ public class ChimeraBomb : MonoBehaviour
 
     IEnumerator explode(){
         yield return new WaitUntil(() => (fuse <= 0));
+        ExplodeBomb();
+    }
+
+    private void ExplodeBomb()
+    {
+        GameManager.instance.Explode(transform.position);
+        GameManager.instance.GetComponent<CameraShake>().shakeDuration = .25f;
         Instantiate(chimeraExplosion, gameObject.transform.position, Quaternion.identity);
         Instantiate(explodeFX, gameObject.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.GetComponent<Player>() && hitTimeout <= 0)
+        {
+            StopAllCoroutines();
+            ExplodeBomb();
+        }
+        else if(!other.GetComponent<Player>())
+        {
+            hitTimeout = 0;
+            GetComponent<Collider2D>().isTrigger = false;
+        }
     }
 }

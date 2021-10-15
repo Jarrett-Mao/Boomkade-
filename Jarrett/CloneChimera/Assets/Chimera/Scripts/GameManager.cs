@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
                 player.GetComponentInChildren<SpriteRenderer>().color = color;
                 player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 player.transform.localEulerAngles = Vector3.zero;
+                player.GetComponent<Collider2D>().enabled = true;
             }
 
             player1.SetPosition(new Vector3(-11.5f, .5f, 0), 270);
@@ -92,6 +93,7 @@ public class GameManager : MonoBehaviour
     {
         if (player.Destroyed) return;
         player.Destroyed = true;
+        player.GetComponent<Collider2D>().enabled = false;
         StartCoroutine(DestroySpaceshipSequence(player));
         // Debug.Log("working");
         // musicPlayer.GetComponent<BackgroundMusic>().playGameOver();
