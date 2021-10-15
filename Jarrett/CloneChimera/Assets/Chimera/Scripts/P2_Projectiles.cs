@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectiles : Cargo
+public class P2_Projectiles : Cargo
 {
     public Player player;
     public Vector2 direct;
@@ -59,7 +59,7 @@ public class Projectiles : Cargo
     void Update()
     {
        
-        if (Input.GetKeyUp(KeyCode.Space)){
+        if (Input.GetKeyUp(KeyCode.RightShift)){
             
             //bullet.GetComponent<ConstantForce2D>().force = new Vector2(0f, 0f);
             // check if cargo available to shoot
@@ -74,6 +74,4 @@ public class Projectiles : Cargo
         }
         
     }
-    
-    
 }

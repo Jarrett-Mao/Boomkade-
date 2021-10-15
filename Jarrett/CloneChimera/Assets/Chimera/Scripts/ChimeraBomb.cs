@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChimeraBomb : MonoBehaviour
 {
     public ChimeraExplosion chimeraExplosion;
+    public GameObject explodeFX;
     SpriteRenderer sprite;
     double fuse = 3.0f;
     double blinkTimer = 2.7f;
@@ -35,6 +36,7 @@ public class ChimeraBomb : MonoBehaviour
     IEnumerator explode(){
         yield return new WaitUntil(() => (fuse <= 0));
         Instantiate(chimeraExplosion, gameObject.transform.position, Quaternion.identity);
+        Instantiate(explodeFX, gameObject.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }
