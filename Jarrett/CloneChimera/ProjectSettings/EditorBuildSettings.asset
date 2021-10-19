@@ -4,8 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Chimera/ChimeraScene.unity
-    guid: 6cdb99327cfd4a844b985ea0d69d2c9b
+  m_Scenes: []
   m_configObjects: {}
